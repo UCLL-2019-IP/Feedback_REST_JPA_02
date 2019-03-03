@@ -50,7 +50,7 @@ public class FeedbackService {
     public List<Feedback> findFeedbackByName(int topicId, String name) {
         List<Feedback> feedbacks = new ArrayList<>();
         // needed to define the method in the repository!
-        feedbacks = feedbackRepository.findFeedbacksByTopicAndName(topicId, name);
+        feedbacks = feedbackRepository.findByTopicIdAndName(topicId, name);
         // if nothing returned, throw an IllegalArgumentException
         if(feedbacks.isEmpty()){
             throw new IllegalArgumentException();
