@@ -84,6 +84,9 @@ dependencies {
     compile('mysql:mysql-connector-java:8.0.13')
     // needed for in-memory database
     compile("com.h2database:h2")
+
+    // use actuator
+    compile("org.springframework.boot:spring-boot-starter-actuator")
     
     // for testing
     testCompile group: 'junit', name: 'junit', version: '4.12'
