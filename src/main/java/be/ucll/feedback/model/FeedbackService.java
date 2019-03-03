@@ -16,9 +16,9 @@ public class FeedbackService {
     public FeedbackService() { }
 
     // just return the whole list, Spring takes care of conversion to JSON
-    public List<Feedback> getAllFeedbacks() {
+    public List<Feedback> getAllFeedbacks(int topicId) {
         // look at what the autocomplete comes up with if you use the repository!
-        return feedbackRepository.findAll();
+        return feedbackRepository.findByTopicId(topicId);
     }
 
     public void addFeedback(Feedback feedback) {
@@ -47,10 +47,10 @@ public class FeedbackService {
     }
 
     // look for a feedback by name (see controller)
-    public List<Feedback> findFeedbackByName(String name) {
+    public List<Feedback> findFeedbackByName(int topicId, String name) {
         List<Feedback> feedbacks = new ArrayList<>();
         // needed to define the method in the repository!
-        feedbacks = feedbackRepository.findByName(name);
+        feedbacks = feedbackRepository.findFeedbacksByTopicAndName(topicId, name);
         // if nothing returned, throw an IllegalArgumentException
         if(feedbacks.isEmpty()){
             throw new IllegalArgumentException();

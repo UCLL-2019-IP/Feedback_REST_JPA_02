@@ -44,8 +44,7 @@ public class TopicController {
     }
 
     @DeleteMapping("topic/{id}")
-    // HTTP 204 No Content: The server successfully processed the request,
-    // but is not returning any content
+    // HTTP 204 No Content: The server successfully processed the request, but is not returning any content
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteTopic(@PathVariable("id") int id) {
         topicService.deleteTopic(id);
