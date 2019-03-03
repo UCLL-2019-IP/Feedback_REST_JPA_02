@@ -15,7 +15,7 @@ public class FeedbackController {
     FeedbackService feedbackService;
 
     @GetMapping("feedback")
-    public List<Feedback> getAllFeedback() {
+    public List<Feedback> getAllFeedbacks() {
         return feedbackService.getAllFeedbacks();
     }
 
@@ -52,7 +52,7 @@ public class FeedbackController {
     }
 
     // Still the same exception handler as in the previous version
-    @ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "Requested feedback not found!")
+    @ResponseStatus(value = HttpStatus.BAD_REQUEST, reason = "Requested feedback(s) not found!")
     @ExceptionHandler(value = IllegalArgumentException.class)
     public void badIdExceptionHandler() {
     }
