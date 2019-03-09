@@ -1,7 +1,7 @@
 package be.ucll.feedback.controller;
 
 import be.ucll.feedback.model.Feedback;
-import be.ucll.feedback.model.FeedbackService;
+import be.ucll.feedback.model.MyService;
 import be.ucll.feedback.model.Topic;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -13,7 +13,7 @@ import java.util.List;
 @RestController // need to tell Spring this is a REST controller
 public class FeedbackController {
     @Autowired
-    FeedbackService feedbackService;
+    MyService feedbackService;
 
     @GetMapping("topic/{topicId}/feedback")
     public List<Feedback> getAllFeedbacks(@PathVariable int topicId) {

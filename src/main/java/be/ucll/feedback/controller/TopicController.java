@@ -1,7 +1,7 @@
 package be.ucll.feedback.controller;
 
+import be.ucll.feedback.model.MyService;
 import be.ucll.feedback.model.Topic;
-import be.ucll.feedback.model.TopicService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -12,7 +12,7 @@ import java.util.List;
 @RestController // need to tell Spring this is a REST controller
 public class TopicController {
     @Autowired
-    TopicService topicService;
+    MyService topicService;
 
     @GetMapping("topic")
     public List<Topic> getAllTopics() {
